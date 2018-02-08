@@ -81,10 +81,14 @@ h1 {
       content: "×";
       top: 4.5rem; }
       
-#playerO, #playerX {
+.playerName {
   display: block;
-  margin: 2rem auto;
+  margin: 1rem auto;
   padding: 1rem;
+}}
+
+#computer {
+  margin-right: 0.5rem;
 }
 
 .error {
