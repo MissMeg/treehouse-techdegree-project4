@@ -59,16 +59,19 @@ $(document).ready(() => {
     }
     
     //Call validation
-    $('.playerName').keyup(playerNames).focusout(playerNames);
+    $('.playerName').keyup(playerNames);
     $('#computer').change(playerNames);
     
     //On click - show the game board and hide the start screen
     $('#start a').click(() => {
-        $('#start').fadeOut();
-        $('#board').show();
-        console.log(playerNames());
-        $('#player1').append(`<p class="names">${playerNames()[0]}</p>`);
-        $('#player2').append(`<p class="names">${playerNames()[1]}</p>`);
+        if (playerNames()[0] != undefined){
+            $('#start').fadeOut();
+            $('#board').show();
+            $('#player1').append(`<p class="names">${playerNames()[0]}</p>`);
+            $('#player2').append(`<p class="names">${playerNames()[1]}</p>`);
+        } else {
+            playerNames();
+        }
     });
     
     //////////////////////////////GAME////////////////////////////////////
