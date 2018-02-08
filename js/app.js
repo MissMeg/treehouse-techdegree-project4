@@ -28,6 +28,11 @@ $(document).ready(() => {
         if ($('#computer').prop('checked')) {
             let playerX = 'Computer';
             $('#playerX').prop('disabled', true).css('background-color', 'lightgrey').css('cursor', 'not-allowed');
+            if (playerO === '') {
+                //set the button to disabled
+                $('#start a').prop('disabled', true).css('cursor', 'not-allowed');
+                $('#start').prepend('<p class="error" style=" background-color: red; color: white;">Please enter a name for Player O.</p>');
+            }
             let players = [playerO, playerX];
             return players;
         } else {
