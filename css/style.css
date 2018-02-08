@@ -80,6 +80,17 @@ h1 {
     .screen-win-two p:before {
       content: "×";
       top: 4.5rem; }
+      
+#playerO, #playerX {
+  display: block;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.error {
+  padding-bottom: .5rem;
+  padding-top: .5rem;
+}
 
 .board {
   padding-top: 1em; }
@@ -92,7 +103,7 @@ h1 {
   position: absolute;
   top: 1rem;
   width: 35%;
-  padding: 1.25em 0 1em;
+  padding: 1.25em 0 0;
   outline: 1px solid #ccc;
   transition: 1s; }
   .players svg g {
