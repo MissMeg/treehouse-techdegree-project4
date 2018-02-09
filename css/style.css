@@ -85,7 +85,12 @@ h1 {
   display: block;
   margin: 1rem auto;
   padding: 1rem;
-}}
+}
+
+#playerO, #playerX {
+  border-radius: 4px;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+}
 
 #computer {
   margin-right: 0.5rem;
@@ -122,9 +127,14 @@ h1 {
   #player1.active svg g, #player2.active svg g {
     fill: #fff; }
   #player1.active {
-    background: #FFA000; }
+    background: #FFA000;
+    color: white;
+    
+  }
   #player2.active {
-    background: #3688C3; }
+    background: #3688C3; 
+    color: white;
+  }
 
 .boxes {
   width: 480px;
