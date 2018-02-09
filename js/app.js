@@ -252,17 +252,24 @@ $(document).ready(() => {
         }
     });
     
+    //reset the game
     const resetGame = () => {
-        console.log('reached here');
-        $('.active').removeClass('active');
-        $('.box').removeClass('box-filled-1').removeClass('box-filled-2');
-        $('#player1').addClass('active');
-        $('#finish').remove();
+        //remove fill classes
+        $('.box').removeClass('box-filled-1').removeClass('box-filled-2').removeClass('noHover');
+        //remove the winning screen - so we can add the correct one fro the next game
+        $('.screen-win').remove();
+        //show the board again
         $('#board').show();
+        //make sure player 1 is ready to start again
+        if ($('#player2').hasClass('active')) {
+            $('#player2').removeClass('active');
+            $('#player1').addClass('active');
+        }
     }
     
-    $('#finish a').click(() => {
-        console.log('reached here');
+    //since the element does not exist on start - must capture the click event this way
+    $('body').on('click', '#finish a',(e) => {
+        //call reset game when the new game button is clicked
         resetGame();
     });
     
